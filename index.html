@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Karla:wght@400;600&display=swap" rel="stylesheet">
+<!-- Configuración PWA para Celulares -->
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ff02c8">
+<meta name="mobile-web-app-capable" content="yes">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -258,4 +262,15 @@
   </div>
 
 </body>
+<script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js')
+                .then(reg => console.log('Service Worker registrado con éxito', reg))
+                .catch(err => console.error('Error al registrar Service Worker', err));
+        });
+    }
+</script>
+
+
 </html>

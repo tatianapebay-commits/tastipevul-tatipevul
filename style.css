@@ -79,7 +79,7 @@ body {
 .panel__texto {
   margin: 0 0 2rem;
   max-width: 34ch;
-  color: rgba(36, 31, 53, 0.78);
+  color: #ff02c8;
 }
 
 .tips {
